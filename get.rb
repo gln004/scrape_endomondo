@@ -82,7 +82,6 @@ if cache_age > expiration
         # debug pp ww 
 
     (2..pages).each do |i|
-        puts i 
         interim = interim.link_with(:text => "#{i}").click
 
         page = Nokogiri::HTML(interim.body)
@@ -100,7 +99,7 @@ if cache_age > expiration
 
         # write file
 	    File.open(cache, "w") do |file|
-            (0..20).each do |i|
+            (0..pages).each do |i|
                 file.puts arr[i]
             end
         end
