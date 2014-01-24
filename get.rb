@@ -13,16 +13,9 @@ pages = 30
 
 def clean(b)
 
-    b.gsub!(/\t\t/,'')
-    b.gsub!(/        \n\t/,'')
-    b.gsub!(/\n          /,'')
-    b.gsub!(/      /,'')
-    b.gsub!(/  /,',')
-    b.gsub!(/ $/,'')
-    b.gsub!(/^D.*/,'')
-    b.gsub!(/^\n/,'')
+    c = b.gsub(/\t\t/,'').gsub(/        \n\t/,'').gsub(/\n          /,'').gsub(/      /,'').gsub(/  /,',').gsub(/ $/,'').gsub(/^D.*/,'').gsub(/^\n/,'')
 
-    return b
+    return c
 end
 
 
